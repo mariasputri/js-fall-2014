@@ -134,4 +134,4 @@ Let's recap. You forked my repository so you have your own copy on github. Then 
 
 We'll do more with git later. But that's enough for now. Note, there is also a GUI application for git. Feel free to use it if you're uncomfortable with the command line, but note throughout the class I'll always being doing instructions for the command line.
 
-DONE
+DONE!!!
