@@ -7,11 +7,48 @@
     <body>
         <script>
 
-            // Complete your work here. I'll do the first one for you:
             var myNum = 3;
             console.log(myNum);
+            
+            var anothernumber = 22;
+			console.log(anothernumber);
 
-            // Now you go...
+			var sentence = "Everyday is Like Sunday";
+			console.log(sentence);
+
+			var A = myNum + anothernumber;
+			console.log(A);
+
+			var B = sentence + myNum;
+			console.log(B);
+
+			var C = sentence - myNum;
+			console.log(C);
+
+			var classes = "javascript, thesis, film"; 
+			console.log(classes);
+
+			var fall = {
+			"javascript": "Justin Donato",
+			"thesis": "David Yun",
+			"film": "Sue Young Park"
+			};
+
+			var print = function(first, second) {
+			console.log(first, second);
+			};
+
+			print(fall);
+			print(1, 2);
+			print(10, "Hello");
+
+			var swap = function(a, b) {
+				var b = [a, a = b][0];
+				console.log(a, b);
+			};
+			
+			swap(5, 2);
+			swap(10, "Hello");
 
         </script>
     </body>
