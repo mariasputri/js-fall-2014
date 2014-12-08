@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+ 
+<head>
+  <title>Jakarta Kota Jasa</title>
+  <link rel="stylesheet" href="assets/css/global.css">
+ </head>
+ 
+ <body>
+
+
+   	<div id="container">
+ 		<canvas id="canvas" width=1500 height=800>
+ 		</canvas>
+
+ 		<canvas id="canvas-1" width=1500 height=800>
+ 		</canvas>
+ 	</div>
+	
+	<script>
+	(function() {
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#00FF00';
+    ctx.rotate(Math.PI / 8);
+    ctx.font = 'bold 100px Arial';
+    ctx.fillText('Jakarta', 950, 20);
+
+    ctx.fillStyle = '#00FF00';
+    ctx.font = 'bold 100px Arial';
+    ctx.fillText('Kota', 100, 100);
+
+    ctx.fillStyle = '#00FF00';
+    ctx.font = 'bold 100px Arial';
+    ctx.fillText('Jasa', 200, 300);
+
+    ctx.fillStyle = '#00FF00';
+    ctx.font = 'bold 100px Arial';
+    ctx.fillText('Jakarta', 600, 50);
+
+    ctx.fillStyle = '#00FF00';
+    ctx.font = 'bold 100px Arial';
+    ctx.fillText('Kota', 30, 20);
+
+    ctx.fillStyle = '#00FF00';
+    ctx.font = 'bold 100px Arial';
+    ctx.fillText('Jasa', 400, 60);
+
+    ctx.fillStyle = '#00FF00';
+    ctx.font = 'bold 100px Arial';
+    ctx.fillText('Kota', 800, 300);
+
+    ctx.fillStyle = '#00FF00';
+    ctx.font = 'bold 100px Arial';
+    ctx.fillText('Jasa', 500, 400);
+
+    ctx.fillStyle = '#00FF00';
+    ctx.font = 'bold 100px Arial';
+    ctx.fillText('Jakarta', 600, 500);
+
+    ctx.fillStyle = '#00FF00';
+    ctx.font = 'bold 100px Arial';
+    ctx.fillText('Kota', 300, 600);
+
+    ctx.fillStyle = '#00FF00';
+    ctx.font = 'bold 100px Arial';
+    ctx.fillText('Jasa', 800, 200);
+
+    // FALLING DOTS //
+	var canvas = document.getElementById("canvas-1");
+	var ctx = canvas.getContext("2d");
+	var spawnLineY = 25;
+	var spawnRate = 2500;
+	var spawnRateOfDescent = 2;
+	var lastSpawn = -1;
+	var objects = [];
+	var startTime = Date.now();
+	animate();
+	
+	function spawnRandomObject() {
+
+	var t;
+	    if (Math.random() < 0.50) {
+	        t = "#FF0000";
+	    } else {
+	        t = "#FF00E6";
+	    }
+
+	    var object = {
+	        type: t,
+	        x: Math.random() * (canvas.width) + 15,
+	        y: spawnLineY,
+	    }
+
+	    objects.push(object);
+	}
+
+
+
+	function animate() {
+
+	    var time = Date.now();
+
+	    if (time > (lastSpawn + spawnRate)) {
+	        lastSpawn = time;
+	        spawnRandomObject();
+	    }
+
+	    requestAnimationFrame(animate);
+
+	    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	    ctx.beginPath();
+	    ctx.moveTo(0, spawnLineY);
+	    ctx.lineTo(canvas.width, spawnLineY);
+	    ctx.stroke();
+
+	    for (var i = 0; i < objects.length; i++) {
+	        var object = objects[i];
+	        object.y += spawnRateOfDescent;
+	        ctx.beginPath();
+	        ctx.arc(object.x, object.y, 80, 0, Math.PI * 2);
+	        ctx.closePath();
+	        ctx.fillStyle = object.type;
+	        ctx.fill();
+	    }
+
+	}
+
+
+
+})()
+    </script>
+
+    <div id="container1">
+		<table>
+		  <tbody>
+		    <tr>
+		      <td><img src="assets/images/1.jpg"></td>
+		      <td><img src="assets/images/2.jpg"></td>
+		      <td><video id="sholat" src="assets/videos/aadc.mp4" controls loop autoplay></video></td>
+		      <td><img src="assets/images/4.jpg"></td>
+		      <td><img src="assets/images/5.jpg"></td>
+		      <td><video id="sholat" src="assets/videos/sholat.mp4" controls loop autoplay></video></td>
+		      <td><img src="assets/images/7.jpg"></td>
+		      <td><img src="assets/images/8.jpg"></td>
+		      <td><img src="assets/images/9.jpg"></td>
+		      <td><img src="assets/images/10.jpg"></td>
+		    </tr>
+		    <tr>
+		      <td><video id="sholat" src="assets/videos/traffic.mp4" controls loop autoplay></video></td>
+		      <td><img src="assets/images/12.jpg"></td>
+		      <td><img src="assets/images/13.jpg"></td>
+		      <td><img src="assets/images/14.jpg"></td>
+		      <td><video id="sholat" src="assets/videos/pramoedya.mp4" controls loop autoplay></video></td>
+		      <td><img src="assets/images/16.jpg"></td>
+		      <td><img src="assets/images/17.jpg"></td>
+		      <td><img src="assets/images/18.jpg"></td>
+		      <td><img src="assets/images/19.jpg"></td>
+		      <td><img src="assets/images/20.jpg"></td>
+		    </tr>
+		    <tr>
+		      <td><img src="assets/images/21.jpg"></td>
+		      <td><img src="assets/images/22.jpg"></td>
+		      <td><img src="assets/images/23.jpg"></td>
+		      <td><video id="sholat" src="assets/videos/mall.mp4" controls loop autoplay></video></td>
+		      <td><img src="assets/images/25.jpg"></td>
+		      <td><img src="assets/images/26.jpg"></td>
+		      <td><video id="sholat" src="assets/videos/wedding.mp4" controls loop autoplay></video></td>
+		      <td><img src="assets/images/28.jpg"></td>
+		      <td><img src="assets/images/29.jpg"></td>
+		      <td><img src="assets/images/30.jpg"></td>
+		    </tr>
+		    <tr>
+		      <td><img src="assets/images/31.jpg"></td>
+		      <td><img src="assets/images/32.jpg"></td>
+		      <td><img src="assets/images/33.jpg"></td>
+		      <td><video id="sholat" src="assets/videos/dorce.mp4" controls loop autoplay></video></td>
+		      <td><img src="assets/images/35.jpg"></td>
+		      <td><img src="assets/images/36.jpg"></td>
+		      <td><video id="sholat" src="assets/videos/soekarno.mp4" controls loop autoplay></video></td>
+		      <td><img src="assets/images/38.jpg"></td>
+		      <td><video id="sholat" src="assets/videos/flashmob.mp4" controls loop autoplay></video></td>
+		      <td><img src="assets/images/40.jpg"></td>
+		    </tr>
+		    <tr>
+		      <td><img src="assets/images/41.jpg"></td>
+		      <td><img src="assets/images/42.jpg"></td>
+		      <td><img src="assets/images/43.jpg"></td>
+		      <td><img src="assets/images/44.jpg"></td>
+		      <td><video id="sholat" src="assets/videos/kumuh.mp4" controls loop autoplay></video></td>
+		      <td><img src="assets/images/46.jpg"></td>
+		      <td><img src="assets/images/47.jpg"></td>
+		      <td><img src="assets/images/48.jpg"></td>
+		      <td><img src="assets/images/49.jpg"></td>
+		      <td><video id="sholat" src="assets/videos/operajawa.mp4" controls loop autoplay></video></td>
+		    </tr>
+		  </tbody>
+		</table>
+  	</div>
+
+ </body>
+
+</html>
